@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 function method() {
-    return '2 days'
+    return '2 days';
 }
 
 exports.method = method;

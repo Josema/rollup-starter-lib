@@ -7,7 +7,7 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var ms = _interopDefault(require('ms'));
 
 function method() {
-    return ms('2 days')
+    return ms('2 days');
 }
 
 exports.method = method;

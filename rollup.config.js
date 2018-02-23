@@ -1,6 +1,7 @@
 import uglify from 'rollup-plugin-uglify'
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
+import babel from 'rollup-plugin-babel'
 // import pkg from './package.json'
 
 export default [
@@ -14,6 +15,9 @@ export default [
         },
         sourcemap: true,
         plugins: [
+            babel({
+                exclude: ['node_modules/**']
+            }),
             uglify(),
             resolve(), // so Rollup can find `ms`
             commonjs() // so Rollup can convert `ms` to an ES module
@@ -21,9 +25,12 @@ export default [
     },
     {
         input: 'src/module1/index.js',
-        output: [
-            { file: './module1/index.js', format: 'cjs' }
-            // { file: './module1/index.js', format: 'es' }
+        output: { file: './module1/index.js', format: 'cjs' },
+
+        plugins: [
+            babel({
+                exclude: ['node_modules/**']
+            })
         ],
         external: ['ms']
     },
@@ -38,12 +45,22 @@ export default [
         },
         external: ['ms'],
         sourcemap: true,
-        plugins: [uglify()]
+        plugins: [
+            babel({
+                exclude: ['node_modules/**']
+            }),
+            uglify()
+        ]
     },
     {
         input: 'src/module2/index.js',
         output: { file: './module2/index.js', format: 'cjs' },
-        external: ['ms']
+        external: ['ms'],
+        plugins: [
+            babel({
+                exclude: ['node_modules/**']
+            })
+        ]
     },
 
     // Module3
@@ -55,10 +72,20 @@ export default [
             format: 'umd'
         },
         sourcemap: true,
-        plugins: [uglify()]
+        plugins: [
+            babel({
+                exclude: ['node_modules/**']
+            }),
+            uglify()
+        ]
     },
     {
         input: 'src/module3/index.js',
-        output: { file: './module3/index.js', format: 'cjs' }
+        output: { file: './module3/index.js', format: 'cjs' },
+        plugins: [
+            babel({
+                exclude: ['node_modules/**']
+            })
+        ]
     }
 ]
