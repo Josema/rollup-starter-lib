@@ -1,0 +1,1 @@
+{"version":3,"file":"index.umd.js","sources":["../src/module2/index.js"],"sourcesContent":["import ms from 'ms'\n\nexport function method() {\n    return ms('2 days')\n}\n"],"names":["ms"],"mappings":"iRAEO,WACH,OAAOA,EAAG"}

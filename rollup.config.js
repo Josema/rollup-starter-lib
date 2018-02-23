@@ -12,7 +12,7 @@ export default [
             file: './module1/index.umd.js',
             format: 'umd'
         },
-        // sourceMap: true,
+        sourcemap: true,
         plugins: [
             uglify(),
             resolve(), // so Rollup can find `ms`
@@ -37,6 +37,7 @@ export default [
             format: 'umd'
         },
         external: ['ms'],
+        sourcemap: true,
         plugins: [uglify()]
     },
     {
@@ -53,6 +54,7 @@ export default [
             file: './module3/index.umd.js',
             format: 'umd'
         },
+        sourcemap: true,
         plugins: [uglify()]
     },
     {

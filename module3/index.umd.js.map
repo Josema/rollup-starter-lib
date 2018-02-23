@@ -1,0 +1,1 @@
+{"version":3,"file":"index.umd.js","sources":["../src/module3/index.js"],"sourcesContent":["export function method() {\n    return '2 days'\n}\n"],"names":[],"mappings":"0MAAO,WACH,MAAO"}
